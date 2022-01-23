@@ -41,22 +41,22 @@ execute inventory.sql in order to create TestDb and tables
 
 ![Alt text](/assert/images/sqlrun.png?raw=true "Title")
 
-# Start SQL Server connector
+### Start SQL Server connector
 ```shell
 curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @register-sqlserver.json
 ```
 
-# Start the Elastic Sink connector
+### Start the Elastic Sink connector
 ```shell
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8083/connectors/ -d es-sink.json
 ```
 
-# Check the register connectors
+### Check the register connectors
 ```shell
 curl -H "Accept:application/json" localhost:8083/connectors/
 ```
 At this moment all contenct on table customer should be present in the index customers.
-# Consume messages from a Debezium topic
+### Consume messages from a Debezium topic
 ```shell
 docker-compose -f docker-compose-sqlserver.yaml exec kafka /kafka/bin/kafka-console-consumer.sh \
     --bootstrap-server kafka:9092 \
@@ -64,11 +64,11 @@ docker-compose -f docker-compose-sqlserver.yaml exec kafka /kafka/bin/kafka-cons
     --property print.key=true \
     --topic server1.dbo.customers
 ```
-# Modify records in the database via SQL Server client (do not forget to add `GO` command to execute the statement)
+### Modify records in the database via SQL Server client (do not forget to add `GO` command to execute the statement)
 ```shell
 docker-compose -f docker-compose-sqlserver.yaml exec sqlserver bash -c '/opt/mssql-tools/bin/sqlcmd -U sa -P $SA_PASSWORD -d testDB'
 ```
-# Shut down the cluster
+### Shut down the cluster
 ```shell
 docker-compose -f docker-compose-sqlserver.yaml down
 ```
