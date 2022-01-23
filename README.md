@@ -48,7 +48,7 @@ curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json"
 
 ### Start the Elastic Sink connector
 ```shell
-curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8083/connectors/ -d es-sink.json
+curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8083/connectors/ -d @es-sink.json
 ```
 
 ### Check the register connectors
@@ -58,11 +58,10 @@ curl -H "Accept:application/json" localhost:8083/connectors/
 At this moment all contenct on table customer should be present in the index customers.
 ### Consume messages from a Debezium topic
 ```shell
-docker-compose -f docker-compose.yaml exec kafka /kafka/bin/kafka-console-consumer.sh \
+docker-compose  exec kafka /kafka/bin/kafka-console-consumer.sh \
     --bootstrap-server kafka:9092 \
-    --from-beginning \
-    --property print.key=true \
     --topic server1.dbo.customers
+    --from-beginning 
 ```
 ### Modify records in the database via SQL Server client (do not forget to add `GO` command to execute the statement)
 ```shell
