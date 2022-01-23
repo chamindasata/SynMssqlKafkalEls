@@ -1,3 +1,18 @@
+## Topology
+Here’s a diagram that shows how the data is flowing through our distributed system. First, the Debezium SQL Server connector is continuously capturing the changes from the SQL Server database, and sending the changes for each table to separate Kafka topics. Then, the Confluent JDBC sink connector is continuously reading those topics  and the Confluent Elasticsearch connector is continuously reading those same topics and writing the events into Elasticsearch.
+
+![Alt text](/assert/images/topology.png?raw=true "Title")
+https://docs.confluent.io/kafka-connect-jdbc/current/sink-connector/index.html
+https://github.com/confluentinc/kafka-connect-elasticsearch
+
+## Debezium connector for SQL Server
+
+To enable the Debezium SQL Server connector to capture change event records for database operations, you must first enable change data capture on the SQL Server database. CDC must be enabled on both the database and on each table that you want to capture.
+
+https://debezium.io/documentation/reference/1.8/connectors/sqlserver.html
+
+https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-ver15
+
 ## Using SQL Server
 
 ```shell
