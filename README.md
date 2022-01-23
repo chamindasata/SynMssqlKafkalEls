@@ -1,5 +1,5 @@
 # SQL Server Debezium Kafka ElasticSearch
-We can set up a simple streaming pipeline to ingest CDC events from SQL Server to Kafka using Debezium and Kafka Connect and the Confluent Elasticsearch connector is continuously reading those same topics and writing the events into Elasticsearch.
+We can set up a simple streaming pipeline to ingest CDC events from SQL Server to Kafka using Debezium and Kafka Connect, and the Confluent Elasticsearch connector is continuously reading those same topics and writing the events into Elasticsearch.
 ## Topology
 Here’s a diagram that shows how the data is flowing through our distributed system. First, the Debezium SQL Server connector is continuously capturing the changes from the SQL Server database, and sending the changes for each table to separate Kafka topics. Then, the Confluent JDBC sink connector is continuously reading those topics  and the Confluent Elasticsearch connector is continuously reading those same topics and writing the events into Elasticsearch.
 
