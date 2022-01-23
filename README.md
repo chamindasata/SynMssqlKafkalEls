@@ -5,6 +5,11 @@ Here’s a diagram that shows how the data is flowing through our distributed sy
 
 ![Alt text](/assert/images/topology.png?raw=true "Title")
 
+### Debezium Architecture
+
+![Alt text](/assert/images/architecture.png?raw=true "Title")
+
+https://debezium.io/documentation/reference/stable/architecture.html
 ## Kafka Connect Elasticsearch Connector
 The kafka-connect-elasticsearch is a Kafka Connector for copying data between Kafka and Elasticsearch.
 
