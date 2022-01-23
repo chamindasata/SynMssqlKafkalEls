@@ -15,11 +15,16 @@ https://debezium.io/documentation/reference/1.8/connectors/sqlserver.html
 
 https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-ver15
 
+## Start docker containers
+
+```shell
+# Start the topology as defined in https://debezium.io/documentation/reference/stable/tutorial.html
+export DEBEZIUM_VERSION=1.8
+docker-compose  docker-compose.yaml up
+
+```
 ## Using SQL Server
-
-
-
-# Initialize database and insert test data
+### Initialize database and insert test data
 Login to sql server using Sql server Management studio 
 
 ![Alt text](/assert/images/sqllogin.png?raw=true "Title")
@@ -29,11 +34,6 @@ execute inventory.sql in order to create TestDb and tables
 ![Alt text](/assert/images/sqlrun.png?raw=true "Title")
 
 ```shell
-# Start the topology as defined in https://debezium.io/documentation/reference/stable/tutorial.html
-export DEBEZIUM_VERSION=1.8
-docker-compose  docker-compose.yaml up
-
-
 # Start SQL Server connector
 curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @register-sqlserver.json
 
