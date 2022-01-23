@@ -58,7 +58,7 @@ curl -H "Accept:application/json" localhost:8083/connectors/
 At this moment all contenct on table customer should be present in the index customers.
 ### Consume messages from a Debezium topic
 ```shell
-docker-compose -f docker-compose-sqlserver.yaml exec kafka /kafka/bin/kafka-console-consumer.sh \
+docker-compose -f docker-compose.yaml exec kafka /kafka/bin/kafka-console-consumer.sh \
     --bootstrap-server kafka:9092 \
     --from-beginning \
     --property print.key=true \
@@ -66,10 +66,10 @@ docker-compose -f docker-compose-sqlserver.yaml exec kafka /kafka/bin/kafka-cons
 ```
 ### Modify records in the database via SQL Server client (do not forget to add `GO` command to execute the statement)
 ```shell
-docker-compose -f docker-compose-sqlserver.yaml exec sqlserver bash -c '/opt/mssql-tools/bin/sqlcmd -U sa -P $SA_PASSWORD -d testDB'
+docker-compose -f docker-compose.yaml exec sqlserver bash -c '/opt/mssql-tools/bin/sqlcmd -U sa -P $SA_PASSWORD -d testDB'
 ```
 ### Shut down the cluster
 ```shell
-docker-compose -f docker-compose-sqlserver.yaml down
+docker-compose  down
 ```
-```
+
