@@ -78,5 +78,5 @@ There are mainly two platform/frameworks that are used to create streaming data 
 #### Kinesis- 
 AWS Managed service. By using AWS DMS(Data MigrationService) and Kinesis one can create a real-time data ingestion pipeline to stream CDC events from a databas.
 #### Kafka-
-Open Source and most widely used. Recently, AWS also started managed Kafka service by the name AWS MSK
+Open Source and most widely used. The AWS also has managed Kafka service by the name AWS MSK
 
