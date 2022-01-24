@@ -75,3 +75,7 @@ Open Source and most widely used. The AWS also has managed Kafka service by the 
 ####  Microservices Data Exchange With the Outbox Pattern
 https://debezium.io/blog/2019/02/19/reliable-microservices-data-exchange-with-the-outbox-pattern/
 
+#### Application modernization patterns with Apache Kafka, Debezium, and Kubernetes
+
+https://developers.redhat.com/articles/2021/06/14/application-modernization-patterns-apache-kafka-debezium-and-kubernetes#
+
