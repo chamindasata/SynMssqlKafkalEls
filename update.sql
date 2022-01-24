@@ -1,11 +1,12 @@
 use testDB
 GO
 --insert new record
-insert INTO orders ('2022-01-23',1001,105,10)
+INSERT INTO customers(first_name,last_name,email)
+  VALUES ('Oliver','Connor','oliver.connor@acme.com');
 GO
 -- update record
-update products_on_hand set quantity=15 where product_id=105
+update customers setemail='oliver.connor@gmail.com' where id=1005
 GO
 -- delete record
-delete products_on_hand where product_id=105
+delete customers where id=1005
 GO
