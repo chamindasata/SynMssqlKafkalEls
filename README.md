@@ -14,6 +14,7 @@ https://debezium.io/documentation/reference/stable/architecture.html
 The kafka-connect-elasticsearch is a Kafka Connector for copying data between Kafka and Elasticsearch.
 
 https://github.com/confluentinc/kafka-connect-elasticsearch/
+
 https://sematext.com/blog/kafka-connect-elasticsearch-how-to/
 
 ## Debezium connector for SQL Server
