@@ -14,6 +14,7 @@ https://debezium.io/documentation/reference/stable/architecture.html
 The kafka-connect-elasticsearch is a Kafka Connector for copying data between Kafka and Elasticsearch.
 
 https://github.com/confluentinc/kafka-connect-elasticsearch
+https://sematext.com/blog/kafka-connect-elasticsearch-how-to/
 
 ## Debezium connector for SQL Server
 
@@ -54,14 +55,6 @@ curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" 
 ### Check the register connectors
 ```shell
 curl -H "Accept:application/json" localhost:8083/connectors/
-```
-At this moment all contenct on table customer should be present in the index customers.
-### Consume messages from a Debezium topic
-```shell
-docker-compose  exec kafka /kafka/bin/kafka-console-consumer.sh \
-    --bootstrap-server kafka:9092 \
-    --topic server1.dbo.customers
-    --from-beginning 
 ```
 ### Modify records in the database via SQL Server client (do not forget to add `GO` command to execute the statement)
 ```shell
